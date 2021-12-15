@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // console.log(localStorage);
+
+    // if (window.localStorage) {
+    //   console.log('支持');
+
+    // }
+
+    // 存
+    // localStorage.setItem('goods', '枸杞');
+    // console.log(localStorage.getItem('goods'));
+
+    // 删除
+    // localStorage.removeItem('goods')
+
+    // 修改
+    // localStorage.setItem('goods', '菊花')
+
+    let obj = { name: '小芳', age: 18 }
+
+    // localStorage.setItem('obj', obj)
+
+    // console.log(localStorage.getItem('obj'));
+
+    // 将对象转化为json字符串
+    localStorage.setItem('obj', JSON.stringify(obj))
+
+  </script>
+</body>
+
+</html>

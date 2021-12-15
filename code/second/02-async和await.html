@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./axios.js"></script>
+</head>
+
+<body>
+  <script>
+    // async 修饰函数,表示异步的,可以得到promise对象
+    async function fn() {
+      return '哈哈哈........';
+    }
+
+    // let res = fn();
+    // // console.log(res);
+    // // 可以直接调用then和catch
+    // res.then(data => {
+    //   console.log(data, 1);
+
+    // })
+
+    // res.catch(data => {
+    //   console.log(data, 2);
+
+    // })
+    // let str = '天师过河不用船---自有法度';
+    // console.log(str);
+
+
+   // await 只能在async 内部使用,让异步函数暂停执行,等待promise返回结果
+   
+ async function fn1(){
+
+    let res =await 'Hello async!';
+    return res;
+   }
+
+  //  let data = fn1();
+  //  console.log(data);
+   
+// 和promise的结合
+function say(){
+  return new Promise(function(resolve,reject){
+      setTimeout(function(){
+        // console.log('测试异步...');
+        resolve('测试异步...')
+      },1000)
+  });
+}
+
+// say().then(data=>{
+//   console.log(data);
+// })
+
+// 集合async和await
+async function test(){
+  console.log('this is diyige');
+  
+  let res = await say();
+  console.log(res);
+
+  console.log('this is 第二个');
+  
+  
+}
+// test();
+
+
+// ajax的调用
+// 被async 修饰的函数内部,变成了异步,但是await会等待pro的状态执行完成
+async function fn() {
+      // let arr = [];
+    let data =  await  axios.get({ url: './01-get.php', data: {}, dataType: '' });
+
+    console.log(data);
+    
+    }
+    fn();
+  </script>
+</body>
+
+</html>
