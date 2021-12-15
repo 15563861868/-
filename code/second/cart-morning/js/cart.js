@@ -254,7 +254,9 @@ class Cart {
     return document.querySelectorAll(ele)
   }
 
-
+  $$$(ele){
+    return document.createElement(ele)
+  }
 }
 
 new Cart;
